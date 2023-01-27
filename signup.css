@@ -4,7 +4,7 @@
     font-family: "roboto","Noto Sans Myanmar UI",arial,sans-serif;
 }
 
-.container-signin{
+.Create-form-container{
     height: 50vh;
     max-width: fit-content;
     box-shadow: 0 0 5px 1px;
@@ -17,19 +17,7 @@
     padding: 70px 30px;
 }
 
-.logo-signIn{
-    line-height: 50px;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-.sign-in-text{
-    line-height: 25px;
-    font-weight: 600;
-}
-.continue-text{
-    line-height: 25px;
-}
-form input{
+.Create-form-container input{
     width: 390px;
     outline: none;
     border: thin solid gray;
@@ -37,24 +25,20 @@ form input{
     padding: 10px;
     line-height: 20px;
 }
-.hyper-link{
-    line-height: 40px;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-}
-.create-account-container{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
 
-.create-account-container button{
+#submit{
     border: none;
     outline: none;
     background-color: #4285f4;
     color: white;
     border-radius: 5px;
-    padding: 0 30px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+a{
+    line-height: 40px;
+    text-decoration: none;
+    font-weight: 500;
     cursor: pointer;
 }
