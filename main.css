@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "roboto","Noto Sans Myanmar UI",arial,sans-serif;
+}
+
+.humberg svg{
+    height: 30px;
+    width: 30px;
+}
+
+.app svg{
+    height: 30px;
+    width: 30px;
+}
+
+header{
+    height: 8vh;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+.left-header{
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.right-header{
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.mid-header{
+    display: flex;
+    height: 100%;
+    width: 60vw;
+    align-items: center;
+    position: relative;
+}
+
+.search-icon{
+    position: absolute;
+    left: 10px;
+    fill: gray;
+}
+.search-box input{
+    height: 9vh;
+    width: 55vw;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f3f4;
+    padding: 0px 5vw;
+    font-size: 1.2rem;
+}
+
+.search-box input:focus{
+    background-color: white;
+    box-shadow: 0 0 5px 1px #dadce0;
+}
+
+
+.forms-container{
+    height: 30vh;
+    max-width: 100%;
+    background-color: #f1f3f4;
+    padding: 5vh 15vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.all-templates{
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
+}
+
+.template{
+    height: 120px;
+    width: 180px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.template img{
+    height: 100%;
+    width: 100%;
+}
