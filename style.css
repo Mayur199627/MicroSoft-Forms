@@ -5,7 +5,7 @@
 }
 
 .container-signin{
-    height: 50vh;
+    min-height: 50vh;
     max-width: fit-content;
     box-shadow: 0 0 5px 1px;
     border-radius: 5px;
@@ -14,6 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 70px 30px;
 }
 
@@ -23,19 +24,23 @@
     font-weight: 500;
 }
 .sign-in-text{
-    line-height: 25px;
-    font-weight: 600;
+    line-height: 30px;
+    font-size: 1.5rem;
+
 }
 .continue-text{
-    line-height: 25px;
+    line-height: 30px;
+    margin-bottom: 20px;
 }
 form input{
-    width: 390px;
+    min-width: 390px;
     outline: none;
     border: thin solid gray;
     border-radius: 5px;
     padding: 10px;
     line-height: 20px;
+    margin-bottom: 20px;
+
 }
 .hyper-link{
     line-height: 40px;

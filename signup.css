@@ -17,8 +17,18 @@
     padding: 70px 30px;
 }
 
+.logo-signIn{
+    line-height: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.sign-up-text{
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
 .Create-form-container input{
-    width: 390px;
+    min-width: 390px;
     outline: none;
     border: thin solid gray;
     border-radius: 5px;
