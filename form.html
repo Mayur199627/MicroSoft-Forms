@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minisoft Form</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="./css/form.css">
     <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -34,33 +34,39 @@
     </nav>
     
     <main>
-        <div class="left-main">
-            <div class="question-container">
-                <div class="question-header">
-                    <div class="form-text" style="font-size: 1.5rem;">Untiteled form</div>
-                    <div class="rename-input"><input type="text"></div>
-                    <div class="form-discription">
-                        <input type="text" placeholder="Form Description">
+        <section class="question-tab">
+            <div class="left-main">
+                <div class="question-container">
+                    <div class="question-header">
+                        <div class="form-text" style="font-size: 1.5rem;">Untiteled form</div>
+                        <div class="rename-input"><input type="text"></div>
+                        <div class="form-discription">
+                            <input type="text" placeholder="Form Description">
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="questions-list">
+                    <div class="question">
+                        <div class="question-text" style="font-size: 1.2rem;">Question</div>
+                        <div class="save-question"><input type="text"></div>
+                        <div class="question-option">
+                            <input type="radio" name="" value=""> option1<br>
+                            <input type="radio" name="" value=""> option2
+                        </div>
                     </div>
                 </div>
             </div>
 
-            
-            <div class="questions-list">
-                <div class="question">
-                    <div class="question-text" style="font-size: 1.2rem;">Question</div>
-                    <div class="save-question"><input type="text"></div>
-                    <div class="question-option">
-                        <input type="radio" name="" value=""> option1<br>
-                        <input type="radio" name="" value=""> option2
-                    </div>
-                </div>
+            <div class="right-main">
+                <img src="./Images/plus.svg" alt="add-question">
             </div>
-        </div>
+        </section>
 
-        <div class="right-main">
-            <img src="./Images/plus.svg" alt="add-question">
-        </div>
+        <section class="response-tab">
+
+        </section>
     </main>
 
 </body>

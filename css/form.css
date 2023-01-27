@@ -72,9 +72,7 @@ main{
     width: 100%;
     background-color: #f0ebf8;
     padding: 20px 0px;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+    
 }
 
 .question-container{
@@ -117,7 +115,7 @@ main{
 }
 
 .save-question input{
-    /* display: none; */
+    display: none;
     width: 100%;
     background-color: transparent;
     border: none;
@@ -131,12 +129,26 @@ main{
 }
 
 .right-main{
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .right-main img{
     height: 50px;
     width: 50px;
     cursor: pointer;
+}
+
+.response-tab{
+    display: none;
+}
+.question-tab{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
 }
