@@ -73,24 +73,55 @@ header{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow: scroll;
 }
 
 .all-templates{
     display: flex;
     justify-content: space-between;
+    gap: 30px;
     overflow-y: hidden;
 }
-
+.all-templates::-webkit-scrollbar{
+        display: none;
+    }
 .template{
-    height: 120px;
+    height: 150px;
     width: 180px;
-    background-color: white;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 .template img{
+    height: 100px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.template-name{
+    z-index: 100;
+}
+
+.recent-template{
+    padding: 5vh 15vw;   
+}
+
+.template-recent{
+    height: 180px;
+    width: 150px;
+    border: 1px solid #8430ce;
+    border-radius: 5px;
+}
+
+.template-recent img{
     height: 100%;
     width: 100%;
+    border-radius: 5px;
+}
+
+.template-recent .template-name{
+    padding: 0px 10px;
+    font-weight: 550;
+    color: #8430ce;
 }
