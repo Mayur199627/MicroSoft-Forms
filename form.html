@@ -41,24 +41,25 @@
                 <div class="question-container">
                     <div class="question-header">
                         <div class="form-text" style="font-size: 1.5rem;">Untitled form</div>
-                        <div class="rename-input"><input type="text"></div>
+                        <div class="rename-input"><input type="text" class="text-feild"></div>
                         <div class="form-discription">
                             <input type="text" placeholder="Form Description">
                         </div>
                     </div>
                 </div>
 
-                
-                <div class="questions-list">
-                    <div class="question">
-                        <div class="question-text" style="font-size: 1.2rem;">Question</div>
-                        <div class="save-question"><input type="text"></div>
-                        <div class="question-option">
-                            <input type="radio" name="" value=""> option1<br>
-                            <input type="radio" name="" value=""> option2
+                <div class="all-questions">
+                    <div class="questions-list">
+                        <div class="question">
+                            <div class="question-text" style="font-size: 1.2rem;">Question</div>
+                            <div class="save-question"><input type="text" class="text-feild"></div>
+                            <div class="question-option">
+                                <input type="radio" name="" value=""> option1<br>
+                                <input type="radio" name="" value=""> option2
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
 
             <div class="right-main">
@@ -75,117 +76,37 @@
         </section>
     </main>
 
-    <script>
-        // All Variable Declaration //
+    <section class="Modal-popup">
+        <div class="modal-container">
+            <div class="head-modal">
+                <p>Send Form</p>
+                <div class="cross"><svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9498 8.46447C17.3404 8.07394 17.3404 7.44078 16.9498 7.05025C16.5593 6.65973 15.9261 6.65973 15.5356 7.05025L12.0001 10.5858L8.46455 7.05025C8.07402 6.65973 7.44086 6.65973 7.05033 7.05025C6.65981 7.44078 6.65981 8.07394 7.05033 8.46447L10.5859 12L7.05033 15.5355C6.65981 15.9261 6.65981 16.5592 7.05033 16.9497C7.44086 17.3403 8.07402 17.3403 8.46455 16.9497L12.0001 13.4142L15.5356 16.9497C15.9261 17.3403 16.5593 17.3403 16.9498 16.9497C17.3404 16.5592 17.3404 15.9261 16.9498 15.5355L13.4143 12L16.9498 8.46447Z" fill="#000000"/>
+                    </svg></div>
+            </div>
+            <div class="middle-modal">
+                <p>Send via</p>
+                <div class="link"><svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_429_11074)">
+                    <path d="M8 11.9999H16" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 7.99994H6C3.79086 7.99994 2 9.7908 2 11.9999C2 14.2091 3.79086 15.9999 6 15.9999H9" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15 7.99994H18C20.2091 7.99994 22 9.7908 22 11.9999C22 14.2091 20.2091 15.9999 18 15.9999H15" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_429_11074">
+                    <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg></div>
+            </div>
+            <div class="footer-modal">
+                <p>Link</p>
+                <div class="link-address">http://127.0.0.500/customer/form</div>
+            </div>
+        </div>
+    </section>
 
-        const docName = document.querySelector(".form-text");
-        const renameDoc = document.querySelector('.rename-input input');
-        const questionTitle = document.querySelector('.question-header .form-text')
-        const star = document.querySelector('#star svg');
-        const questionText = document.getElementById('question')
-        const responseText = document.getElementById('response')
-        const questionTab = document.querySelector('.question-tab')
-        const responseTab = document.querySelector('.response-tab')
-        const questionEdit = document.querySelector(".question-text")
-        const questionInput = document.querySelector('.save-question input')
-        
-        
-        //Function For Edit Name Of Document //
-
-        function changeName(){
-            docName.style.display = 'none'
-            renameDoc.style.display = 'flex'
-        }
-
-        function saveName(){
-            docName.style.display = 'flex'
-            renameDoc.style.display = 'none'
-            if(renameDoc.value === ""){
-                docName.innerHTML = "untitled form";
-                questionTitle.innerHTML = "untitled form";
-            }else{
-                docName.innerHTML = renameDoc.value;
-                questionTitle.innerHTML = renameDoc.value;
-            }
-        }
-
-        // Function for change color of star //
-
-        function changeColor(){
-            if(star.style.backgroundColor == ""){
-                star.style.backgroundColor = "yellow";
-            }else{
-                star.style.backgroundColor = "";
-            }
-        }
-
-        // Function for display question tab
-
-        function showQuestion(){
-            questionTab.style.display = 'flex';
-            responseTab.style.display = 'none';
-        }
-
-        // Function for display question tab
-
-        function showResponse(){
-            questionTab.style.display = 'none';
-            responseTab.style.display = 'flex';
-        }
-
-        // Function for display question tab
-
-        function editQuestion(){
-            questionEdit.style.display = 'none'
-            questionInput.style.display = 'flex'
-        }
-
-        // Function for display question tab
-
-        function saveQuestion(){
-            if(questionInput.value == ""){
-                questionEdit.innerHTML = "Question";    
-            }else{
-                questionEdit.innerHTML = questionInput.value;
-                questionEdit.style.display = 'flex';
-                questionInput.style.display = 'none';
-            }
-        }
-
-        // Function to Save data
-
-        function saveAll(){
-
-            //save form name //
-            docName.style.display = 'flex'
-            renameDoc.style.display = 'none'
-            if(renameDoc.value === ""){
-                docName.innerHTML = "untitled form";
-                questionTitle.innerHTML = "untitled form";
-            }else{
-                docName.innerHTML = renameDoc.value;
-                questionTitle.innerHTML = renameDoc.value;
-            }
-
-            if(questionInput.value == ""){
-                questionEdit.innerHTML = "Question";    
-            }else{
-                questionEdit.innerHTML = questionInput.value;
-                questionEdit.style.display = 'flex';
-                questionInput.style.display = 'none';
-            }
-        }
-
-        // All Event Listner
-        docName.addEventListener('click',changeName)
-        renameDoc.addEventListener('blur',saveName)
-        star.addEventListener('click',changeColor)
-        questionText.addEventListener('click',showQuestion)
-        responseText.addEventListener('click',showResponse)
-        questionEdit.addEventListener("click",editQuestion)
-        questionInput.addEventListener('blur',saveQuestion)
-        document.addEventListener('click',saveAll)
-
+    <script src="./scripts/form.js">
     </script>
 </body>
 </html>
