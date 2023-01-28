@@ -11,11 +11,13 @@
 <body>
     <header>
         <div class="left-header">
-            <div class="docs-img"><img class="gb_Ec gb_be" src="https://www.gstatic.com/images/branding/product/1x/forms_2020q4_48dp.png" srcset="https://www.gstatic.com/images/branding/product/1x/forms_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png 2x " alt="" aria-hidden="true" role="presentation" style="width:40px;height:40px"></div>
-            <div class="form-text" style="font-size: 1.5rem;">Untiteled form</div>
+            <a href="main.html" class="docs-img"><img class="gb_Ec gb_be" src="https://www.gstatic.com/images/branding/product/1x/forms_2020q4_48dp.png" srcset="https://www.gstatic.com/images/branding/product/1x/forms_2020q4_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/forms_2020q4_48dp.png 2x " alt="" aria-hidden="true" role="presentation" style="width:40px;height:40px"></a>
+            <div class="form-text" style="font-size: 1.5rem;">Untitled form</div>
             <div class="rename-input"><input type="text"></div>
             <div class="svg"><img src="./Images/folder.svg" alt="move-folder"></div>
-            <div class="svg"><img src="./Images/star.svg" alt="star"></div>
+            <div class="svg" id="star"><svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.65 8.93274L12.4852 4.30901C12.2923 3.89699 11.7077 3.897 11.5148 4.30902L9.35002 8.93274L4.45559 9.68243C4.02435 9.74848 3.84827 10.2758 4.15292 10.5888L7.71225 14.2461L6.87774 19.3749C6.80571 19.8176 7.27445 20.1487 7.66601 19.9317L12 17.5299L16.334 19.9317C16.7256 20.1487 17.1943 19.8176 17.1223 19.3749L16.2878 14.2461L19.8471 10.5888C20.1517 10.2758 19.9756 9.74848 19.5444 9.68243L14.65 8.93274Z" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg></div>
         </div>
         <div class="right-header">
             <div class="svg"><img src="./Images/theme.svg" alt="theme"></div>
@@ -30,7 +32,7 @@
     
     <nav>
         <div><a href="#" id="question">Questions</a></div>
-        <div><a href="#" id="responce">Responces</a></div>
+        <div><a href="#" id="response">Responces</a></div>
     </nav>
     
     <main>
@@ -38,7 +40,7 @@
             <div class="left-main">
                 <div class="question-container">
                     <div class="question-header">
-                        <div class="form-text" style="font-size: 1.5rem;">Untiteled form</div>
+                        <div class="form-text" style="font-size: 1.5rem;">Untitled form</div>
                         <div class="rename-input"><input type="text"></div>
                         <div class="form-discription">
                             <input type="text" placeholder="Form Description">
@@ -65,9 +67,125 @@
         </section>
 
         <section class="response-tab">
+            
+            <div class="responce-container">
+                <div class="responce-count"><strong>response 0</strong></div>
+            </div>
 
         </section>
     </main>
 
+    <script>
+        // All Variable Declaration //
+
+        const docName = document.querySelector(".form-text");
+        const renameDoc = document.querySelector('.rename-input input');
+        const questionTitle = document.querySelector('.question-header .form-text')
+        const star = document.querySelector('#star svg');
+        const questionText = document.getElementById('question')
+        const responseText = document.getElementById('response')
+        const questionTab = document.querySelector('.question-tab')
+        const responseTab = document.querySelector('.response-tab')
+        const questionEdit = document.querySelector(".question-text")
+        const questionInput = document.querySelector('.save-question input')
+        
+        
+        //Function For Edit Name Of Document //
+
+        function changeName(){
+            docName.style.display = 'none'
+            renameDoc.style.display = 'flex'
+        }
+
+        function saveName(){
+            docName.style.display = 'flex'
+            renameDoc.style.display = 'none'
+            if(renameDoc.value === ""){
+                docName.innerHTML = "untitled form";
+                questionTitle.innerHTML = "untitled form";
+            }else{
+                docName.innerHTML = renameDoc.value;
+                questionTitle.innerHTML = renameDoc.value;
+            }
+        }
+
+        // Function for change color of star //
+
+        function changeColor(){
+            if(star.style.backgroundColor == ""){
+                star.style.backgroundColor = "yellow";
+            }else{
+                star.style.backgroundColor = "";
+            }
+        }
+
+        // Function for display question tab
+
+        function showQuestion(){
+            questionTab.style.display = 'flex';
+            responseTab.style.display = 'none';
+        }
+
+        // Function for display question tab
+
+        function showResponse(){
+            questionTab.style.display = 'none';
+            responseTab.style.display = 'flex';
+        }
+
+        // Function for display question tab
+
+        function editQuestion(){
+            questionEdit.style.display = 'none'
+            questionInput.style.display = 'flex'
+        }
+
+        // Function for display question tab
+
+        function saveQuestion(){
+            if(questionInput.value == ""){
+                questionEdit.innerHTML = "Question";    
+            }else{
+                questionEdit.innerHTML = questionInput.value;
+                questionEdit.style.display = 'flex';
+                questionInput.style.display = 'none';
+            }
+        }
+
+        // Function to Save data
+
+        function saveAll(){
+
+            //save form name //
+            docName.style.display = 'flex'
+            renameDoc.style.display = 'none'
+            if(renameDoc.value === ""){
+                docName.innerHTML = "untitled form";
+                questionTitle.innerHTML = "untitled form";
+            }else{
+                docName.innerHTML = renameDoc.value;
+                questionTitle.innerHTML = renameDoc.value;
+            }
+
+            if(questionInput.value == ""){
+                questionEdit.innerHTML = "Question";    
+            }else{
+                questionEdit.innerHTML = questionInput.value;
+                questionEdit.style.display = 'flex';
+                questionInput.style.display = 'none';
+            }
+        }
+
+        // All Event Listner
+        docName.addEventListener('click',changeName)
+        renameDoc.addEventListener('blur',saveName)
+        star.addEventListener('click',changeColor)
+        questionText.addEventListener('click',showQuestion)
+        responseText.addEventListener('click',showResponse)
+        questionEdit.addEventListener("click",editQuestion)
+        questionInput.addEventListener('blur',saveQuestion)
+        document.addEventListener('click',saveAll)
+
+    </script>
 </body>
 </html>
