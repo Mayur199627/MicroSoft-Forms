@@ -32,6 +32,7 @@ fetch("https://aircampushack.onrender.com/forms/login",options)
     return resolve.json() 
 
 }).catch((error)=>{
+    alert("User Not Available")
     alert(error);
 })
     reset();

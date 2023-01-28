@@ -10,15 +10,15 @@
 </head>
 <body>
     <main>
-        <form action="#" class="Create-form-container">
+        <form class="Create-form-container">
             <p class="logo-signIn"><span style="color: brown;">Mini</span><span style="color: #4285f4;">soft</span></p>
             <p class="sign-up-text">Create your Account</p>
-            <input type="text" name="name" id="name" placeholder="Enter Your Name" ><br>
-            <input type="email" name="email" id="email" placeholder="Enter Your Email" ><br>
-            <input type="password" name="password" id="password" placeholder="Create Your Password" ><br>
-            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Your Password" ><br>
-            <button value="submit" id="submit">SignUp</button>
-            <a href="index.html">Already have an account ?</a>
+            <input type="text" id="name" placeholder="Enter Your Name" required><br>
+            <input type="email" id="email" placeholder="Enter Your Email" required><br>
+            <input type="password" name="password" id="password" placeholder="Create Your Password" minlength="8" required><br>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Your Password" minlength="8" required><br>
+            <button value="submit" type="submit" id="submit">SignUp</button>
+            <a href="index.html"><b>Already have an account ?</b></a>
         </form>
 
     </main>

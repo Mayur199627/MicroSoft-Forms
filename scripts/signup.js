@@ -21,6 +21,9 @@ function addNewUser(event){
     if(userPass.value !== userConfirmPass.value){
         alert("Password does not match")
     }
+    else if(username.value === "" || userEmail.value == "" || userPass.value === "" || userConfirmPass.value === ""){
+        alert("Please Fill Information")
+    }
     else{
         let id = Date.now();
 
@@ -45,7 +48,7 @@ function addNewUser(event){
             alert(error);
         })
     }
-    
+
     reset()
     
 }
