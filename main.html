@@ -21,7 +21,8 @@
         </div>
         <div class="right-header">
             <div class="app"><svg class="gb_Ze" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></div>
-            <div class="user-icon"><img src="./Images/user.png" alt="user-img" height="50px" width="50px"></div>   
+            <div class="user-icon"><img src="./Images/user.png" alt="user-img" height="50px" width="50px"></div>
+            <button id="logout-btn">Logout</button> 
         </div>
     </header>
     <main>
@@ -45,5 +46,11 @@
 
         </div>
     </footer>
+    <script>
+        const logoutBtn = document.getElementById('logout-btn');
+        logoutBtn.addEventListener('click',()=>{
+            window.location.href = "index.html";
+        })
+    </script>
 </body>
 </html>
