@@ -30,6 +30,10 @@ header{
     width: 25px;
 }
 
+.stared{
+    fill: yellow;
+}
+
 .rename-input input{
     display: none;
     border: none;
@@ -41,7 +45,11 @@ header{
 .form-text{
     display: flex;
 }
-
+.underlined{
+    border-bottom: 5px solid;
+    padding-bottom: 2px;
+    border-radius: 12px;
+}
 
 .right-header button{
     border: none;
@@ -164,7 +172,7 @@ main{
     font-size: 20px;
 }
 
-.Modal-popup{
+.modal-container{
     height: 20vh;
     width: 30vw;
     box-shadow: 0 0 1px 0;
@@ -187,7 +195,9 @@ main{
     align-items: center;
     font-size: 20px;
 }
-
+.cross, .link{
+    cursor: pointer;
+}
 .middle-modal{
     height: 5vh;
     display: flex;
