@@ -10,8 +10,8 @@
         const responseTab = document.querySelector('.response-tab')
         const plusBtn = document.querySelector(".right-main")
         const sendBtn = document.getElementById('send-btn')
-       
-       
+       const formQuestion = document.getElementById("form-question")
+        const questionInput = document.querySelector(".question")
         //Function For Edit Name Of Document //
 
         function changeName(){
@@ -63,15 +63,38 @@
             responseTab.style.display = 'flex';
         }
 
+
         // All Event Listner
         docName.addEventListener('click',changeName)
         renameDoc.addEventListener('blur',saveName)
         star.addEventListener('click',changeColor)
         questionText.addEventListener('click',showQuestion)
         responseText.addEventListener('click',showResponse)
+        plusBtn.addEventListener("click",addQuestion)
+
 
         // formQuestion 
 
-        const form = document.addEventListener("submit",()=>{
-            console.log("hello")
+        // Function for Adding Question
+        let questionsArr = [];
+        function addQuestion(){
+            let id = Date.now();
+            formQuestion.insertAdjacentHTML("beforeend",`<div class="questions-list">
+            <input type="text" placeholder="Enter Your Question" class="question">
+            <input type="text" placeholder="Enter Your Answer" class="answer">
+        </div>`)
+            let questionObj = {
+                id,
+                Question:"",
+                Answer:""
+            }
+            questionsArr.push(questionObj)
+
+        console.log(id, questionsArr)
+        }
+
+        document.addEventListener('click', (e)=>{
+            if(e.target.classList.contains('question')){
+                console.log("hello from question")
+            }
         })
