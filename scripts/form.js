@@ -71,7 +71,7 @@
         questionText.addEventListener('click',showQuestion)
         responseText.addEventListener('click',showResponse)
         plusBtn.addEventListener("click",addQuestion)
-
+        sendBtn.addEventListener('click', sendData)
 
         // formQuestion 
 
@@ -79,9 +79,9 @@
         let questionsArr = [];
         function addQuestion(){
             let id = Date.now();
-            formQuestion.insertAdjacentHTML("beforeend",`<div class="questions-list">
-            <input type="text" placeholder="Enter Your Question" class="question">
-            <input type="text" placeholder="Enter Your Answer" class="answer">
+            formQuestion.insertAdjacentHTML("beforeend",`<div id=${id} class="questions-list">
+            <input type="text" placeholder="Enter Your Question" class="question" onblur="changeQuestion(this,${id})">
+            <input type="text" placeholder="Enter Your Answer" class="answer" onblur="changeAnswer(this,${id})">
         </div>`)
             let questionObj = {
                 id,
@@ -89,12 +89,44 @@
                 Answer:""
             }
             questionsArr.push(questionObj)
-
-        console.log(id, questionsArr)
         }
 
-        document.addEventListener('click', (e)=>{
-            if(e.target.classList.contains('question')){
-                console.log("hello from question")
+        // Function for Input Question //
+        function changeQuestion(ele, id) {
+            for(let i=0; i <questionsArr.length; i++) {
+                if(questionsArr[i].id === id) {
+                    questionsArr[i].Question = ele.value;
+                }
             }
-        })
+        }
+
+        // Function for Input Answer //
+        function changeAnswer(ele, id) {
+            for(let i=0; i <questionsArr.length; i++) {
+                if(questionsArr[i].id === id) {
+                    questionsArr[i].Answer = ele.value;
+                }
+            }
+        }
+
+        // function for send data //
+
+        function sendData(){
+            let options = {
+                body:JSON.stringify(questionsArr),
+                headers : {
+                    "content-type" : "application/json"
+                },
+                method:'POST',
+            };
+
+            fetch("https://aircampushack.onrender.com/forms/senddata",options)
+                .then((resolve)=>{
+                    alert("Data Send Successfully")
+                    window.location.href = "main.html";
+                    return resolve.json(); 
+                }).catch((error)=>{
+                        alert(error);
+                })
+        }
+        
