@@ -24,7 +24,7 @@
             <div class="svg"><img src="./Images/eye.svg" alt="show-hide"></div>
             <div class="svg"><img src="./Images/undo.svg" alt="undo"></div>
             <div class="svg"><img src="./Images/redo.svg" alt="redo"></div>
-            <button id="send-btn">Send</button>
+            <button id="send-btn" type="submit">Send</button>
             <div class="svg"><img src="./Images/more.svg" alt="more"></div>
             <div class="user-icon"><img src="./Images/user.png" alt="user-img" height="50px" width="50px"></div>   
         </div>
@@ -48,23 +48,18 @@
                     </div>
                 </div>
 
-                <div class="all-questions">
-                    <div class="questions-list">
-                        <div class="question">
-                            <div class="question-text" style="font-size: 1.2rem;">Question</div>
-                            <div class="save-question"><input type="text" class="text-feild" name=></div>
-                            <div class="question-option">
-                                <input type="radio" name="question" value=""> True<br>
-                                <input type="radio" name="question" value=""> False
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-            </div>
-
+                
             <div class="right-main">
                 <img src="./Images/plus.svg" alt="add-question">
             </div>
+
+            <form id="form-question">
+                <!-- <div class="questions-list">
+                    <input type="text" placeholder="Enter Your Question" class="question">
+                    <input type="text" placeholder="Enter Your Answer" class="answer">
+                </div> -->
+            </form>
+            
         </section>
 
         <section class="response-tab">
@@ -76,7 +71,7 @@
         </section>
     </main>
 
-    <section class="Modal-popup">
+    <!-- <section class="Modal-popup">
         <div class="modal-container">
             <div class="head-modal">
                 <p>Send Form</p>
@@ -104,7 +99,7 @@
                 <div class="link-address">http://127.0.0.500/customer/form</div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <script src="./scripts/form.js">
     </script>
